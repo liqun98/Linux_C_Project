@@ -110,7 +110,7 @@ void init_sem() {
 }
 
 void init_msgqueue() {
-    if ((msgid = msgget(ftok('.', 'a'), IPC_CREAT|0666)) < 0){
+    if ((msgid = msgget((key_t)1895, IPC_CREAT|0666)) < 0){
         perror("Could not create queue");
     }
 }

@@ -19,7 +19,7 @@ int exit_num;
 
 
 void messageQueueInit(){
-    if ((msgid = msgget(ftok('.', 'a'), IPC_CREAT|0666)) < 0) {
+    if ((msgid = msgget((key_t)1895, IPC_CREAT|0666)) < 0) {
         perror("Could not get queue");
         exit(1);
     }
